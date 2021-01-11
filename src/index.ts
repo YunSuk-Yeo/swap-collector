@@ -82,7 +82,7 @@ function parseTx(txInfo: TxInfo): SwapData[] {
     if (data.type === 'market/MsgSwap') {
       swapDatas.push({
         height: txInfo.height,
-        txHash: txInfo.txhash,
+        tx_hash: txInfo.txhash,
         sender: data.value.trader,
         receiver: data.value.trader,
         offer_denom: data.value.offer_coin.denom,
@@ -97,7 +97,7 @@ function parseTx(txInfo: TxInfo): SwapData[] {
     if (data.type === 'market/MsgSwapSend') {
       swapDatas.push({
         height: txInfo.height,
-        txHash: txInfo.txhash,
+        tx_hash: txInfo.txhash,
         sender: data.value.from_address,
         receiver: data.value.to_address,
         offer_denom: data.value.offer_coin.denom,
@@ -115,7 +115,7 @@ function parseTx(txInfo: TxInfo): SwapData[] {
 
 export type SwapData = {
   height: number;
-  txHash: string;
+  tx_hash: string;
   sender: string;
   receiver: string;
 
